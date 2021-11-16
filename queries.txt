@@ -13,6 +13,7 @@ CREATE TABLE movie (
     Cast1 varchar(20),
     Cast2 varchar(20),
     Image varchar(100),
+    lastUpdated date,
     PRIMARY KEY (MovieId)
 );
 
