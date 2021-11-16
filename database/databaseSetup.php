@@ -11,7 +11,7 @@ if (!$conn) {
 
 $sql = "CREATE DATABASE $dbname";
 if ($conn->query($sql) === TRUE) {
-    echo "Database created successfully"."<br>";
+    echo "Database created successfully" . "<br>";
 } else {
     echo "Error creating database: " . $conn->error;
 }
@@ -76,8 +76,7 @@ create table comment(
 ";
 
 if ($conn->query($sql) === TRUE) {
-    echo "Table created successfully"."<br>";
+    echo "Table created successfully" . "<br>";
 } else {
     echo "Error creating table: " . $conn->error;
 }
-
