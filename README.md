@@ -1,6 +1,6 @@
 # Cinema-In-A-Shell
 
-WP2 semV mini project
+### WP2 semV mini project
 
 Its a cross between a movie information website and social media. On it people
 will submit 100 word long descriptions for movies that they've watched. Others can like those descriptions and engage in discussions.
