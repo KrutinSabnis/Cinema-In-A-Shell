@@ -10,7 +10,6 @@
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
   <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -30,37 +29,47 @@
 
 <body class="w3-theme-l5">
 
-  <!-- https://stackoverflow.com/questions/33302442/get-info-from-external-api-url-using-php/33303776 to get data from api https://sg.media-imdb.com/suggests/b/back%20to.json -->
-  <!-- Navbar -->
   <div class="w3-top">
     <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
-      <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
       <span class="w3-bar-item w3-padding-large">
         <i class="fas fa-film"></i> Cinema in a shell</span>
       <button class=" w3-button w3-padding-large w3-right" title="My Account" style="min-width:100px">
         <span>Logout</span>
       </button>
-      <!-- <button class=" w3-button w3-padding-large w3-right" title="My Account" style="min-width:100px">  
-    <span>Sign up</span>
-</button><button class=" w3-button w3-padding-large w3-right" title="My Account" style="min-width:100px">  
-    <span>Login</span>
-</button> -->
+      <button class=" w3-button w3-padding-large w3-right" title="My Account" style="min-width:100px">
+        <span>Sign up</span>
+      </button><button class=" w3-button w3-padding-large w3-right" title="My Account" style="min-width:100px">
+        <span>Login</span>
+      </button>
     </div>
   </div>
 
-  <!-- Navbar on small screens -->
-  <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium w3-large">
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 1</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 2</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 3</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">My Profile</a>
-  </div>
+  <?php
+  $curl = curl_init();
 
-  <!-- Page Container -->
+  curl_setopt_array($curl, array(
+    CURLOPT_URL => "https://sg.media-imdb.com/suggests/b/back%20to.json",
+    CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_TIMEOUT => 30,
+    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+    CURLOPT_CUSTOMREQUEST => "GET",
+    CURLOPT_HTTPHEADER => array(
+      "cache-control: no-cache"
+    ),
+  ));
+
+  $response = curl_exec($curl);
+  $err = curl_error($curl);
+
+  curl_close($curl);
+
+  $response = json_decode($response, true);
+  echo 'Online: ' . $response['players']['online'];
+  ?>
+
+
   <div class="container" style="max-width:1400px;margin-top:60px">
-    <!-- The Grid -->
     <div class="w3-row justify-content-center">
-      <!-- Left Column -->
       <div class="w3-col m4">
         <div class="w3-card w3-round w3-white w3-margin">
           <div class="w3-container">
@@ -93,17 +102,6 @@
 
   </div>
   <br>
-
-  <script>
-    function openNav() {
-      var x = document.getElementById("navDemo");
-      if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
-      } else {
-        x.className = x.className.replace(" w3-show", "");
-      }
-    }
-  </script>
 
 </body>
 
