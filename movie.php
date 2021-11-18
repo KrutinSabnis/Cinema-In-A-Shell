@@ -1,268 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!-- <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    
     <style>
-        /*font Awesome http://fontawesome.io*/
-        @import url(//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
-
-        /*Comment List styles*/
-        .comment-list .row {
-            margin-bottom: 0px;
+        body {
+            margin-top: 20px;
+            background: #f6f9fc;
         }
 
-        .comment-list .panel .panel-heading {
-            padding: 4px 15px;
+        .account-block {
+            padding: 0;
+            background-image: url(https://via.placeholder.com/500x500/FFB6C1/000000);
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100%;
+            position: relative;
+        }
+
+        .account-block .overlay {
+            -webkit-box-flex: 1;
+            -ms-flex: 1;
+            flex: 1;
             position: absolute;
-            border: none;
-            /*Panel-heading border radius*/
-            border-top-right-radius: 0px;
-            top: 1px;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.4);
         }
 
-        .comment-list .panel .panel-heading.right {
-            border-right-width: 0px;
-            /*Panel-heading border radius*/
-            border-top-left-radius: 0px;
-            right: 16px;
+        .account-block .account-testimonial {
+            text-align: center;
+            color: #fff;
+            position: absolute;
+            margin: 0 auto;
+            padding: 0 1.75rem;
+            bottom: 3rem;
+            left: 0;
+            right: 0;
         }
 
-        .comment-list .panel .panel-heading .panel-body {
-            padding-top: 6px;
+        .text-theme {
+            color: #5369f8 !important;
         }
 
-        .comment-list figcaption {
-            /*For wrapping text in thumbnail*/
-            word-wrap: break-word;
+        .btn-theme {
+            background-color: #5369f8;
+            border-color: #5369f8;
+            color: #fff;
+        }
+    </style>
+    <style>
+        body {
+            margin-top: 20px;
+            background: #eee;
         }
 
-        /* Portrait tablets and medium desktops */
-        @media (min-width: 768px) {
-
-            .comment-list .arrow:after,
-            .comment-list .arrow:before {
-                content: "";
-                position: absolute;
-                width: 0;
-                height: 0;
-                border-style: solid;
-                border-color: transparent;
-            }
-
-            .comment-list .panel.arrow.left:after,
-            .comment-list .panel.arrow.left:before {
-                border-left: 0;
-            }
-
-            /*****Left Arrow*****/
-            /*Outline effect style*/
-            .comment-list .panel.arrow.left:before {
-                left: 0px;
-                top: 30px;
-                /*Use boarder color of panel*/
-                border-right-color: inherit;
-                border-width: 16px;
-            }
-
-            /*Background color effect*/
-            .comment-list .panel.arrow.left:after {
-                left: 1px;
-                top: 31px;
-                /*Change for different outline color*/
-                border-right-color: #FFFFFF;
-                border-width: 15px;
-            }
-
-            /*****Right Arrow*****/
-            /*Outline effect style*/
-            .comment-list .panel.arrow.right:before {
-                right: -16px;
-                top: 30px;
-                /*Use boarder color of panel*/
-                border-left-color: inherit;
-                border-width: 16px;
-            }
-
-            /*Background color effect*/
-            .comment-list .panel.arrow.right:after {
-                right: -14px;
-                top: 31px;
-                /*Change for different outline color*/
-                border-left-color: #FFFFFF;
-                border-width: 15px;
+        @media (min-width: 0) {
+            .g-mr-15 {
+                margin-right: 1.07143rem !important;
             }
         }
 
-        .comment-list .comment-post {
-            margin-top: 6px;
+        @media (min-width: 0) {
+            .g-mt-3 {
+                margin-top: 0.21429rem !important;
+            }
+        }
+
+        .g-height-50 {
+            height: 50px;
+        }
+
+        .g-width-50 {
+            width: 50px !important;
+        }
+
+        @media (min-width: 0) {
+            .g-pa-30 {
+                padding: 2.14286rem !important;
+            }
+        }
+
+        .g-bg-secondary {
+            background-color: #fafafa !important;
+        }
+
+        .u-shadow-v18 {
+            box-shadow: 0 5px 10px -6px rgba(0, 0, 0, 0.15);
+        }
+
+        .g-color-gray-dark-v4 {
+            color: #777 !important;
+        }
+
+        .g-font-size-12 {
+            font-size: 0.85714rem !important;
+        }
+
+        .media-comment {
+            margin-top: 20px
         }
     </style>
 </head>
 
-<!------ Include the above in your HEAD tag ---------->
-
 <body>
-
-
     <div class="container">
         <div class="row">
             <div class="col-md-8">
-                <h2 class="page-header">Comments</h2>
-                <section class="comment-list">
-                    <!-- First Comment -->
-                    <article class="row">
-                        <div class="col-md-2 col-sm-2 hidden-xs">
-                            <figure class="thumbnail">
-                                <img class="img-responsive" src="http://www.tangoflooring.ca/wp-content/uploads/2015/07/user-avatar-placeholder.png" />
-                                <figcaption class="text-center">username</figcaption>
-                            </figure>
+                <div class="media g-mb-30 media-comment">
+                    <img class="d-flex g-width-50 g-height-50 rounded-circle g-mt-3 g-mr-15" src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Image Description">
+                    <div class="media-body u-shadow-v18 g-bg-secondary g-pa-30">
+                        <div class="g-mb-15">
+                            <h5 class="h5 g-color-gray-dark-v1 mb-0">John Doe</h5>
+                            <span class="g-color-gray-dark-v4 g-font-size-12">5 days ago</span>
                         </div>
-                        <div class="col-md-10 col-sm-10">
-                            <div class="panel panel-default arrow left">
-                                <div class="panel-body">
-                                    <header class="text-left">
-                                        <div class="comment-user"><i class="fa fa-user"></i> That Guy</div>
-                                        <time class="comment-date" datetime="16-12-2014 01:05"><i class="fa fa-clock-o"></i> Dec 16, 2014</time>
-                                    </header>
-                                    <div class="comment-post">
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                        </p>
-                                    </div>
-                                    <p class="text-right"><a href="#" class="btn btn-default btn-sm"><i class="fa fa-reply"></i> reply</a></p>
-                                </div>
-                            </div>
+
+                        <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue
+                            felis in faucibus ras purus odio, vestibulum in vulputate at, tempus viverra turpis.</p>
+
+                        <ul class="list-inline d-sm-flex my-0">
+                            <li class="list-inline-item g-mr-20">
+                                <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="#!">
+                                    <i class="fa fa-thumbs-up g-pos-rel g-top-1 g-mr-3"></i>
+                                    178
+                                </a>
+                            </li>
+                            <li class="list-inline-item g-mr-20">
+                                <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="#!">
+                                    <i class="fa fa-thumbs-down g-pos-rel g-top-1 g-mr-3"></i>
+                                    34
+                                </a>
+                            </li>
+                            <li class="list-inline-item ml-auto">
+                                <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="#!">
+                                    <i class="fa fa-reply g-pos-rel g-top-1 g-mr-3"></i>
+                                    Reply
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-8">
+                <div class="media g-mb-30 media-comment">
+                    <img class="d-flex g-width-50 g-height-50 rounded-circle g-mt-3 g-mr-15" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="Image Description">
+                    <div class="media-body u-shadow-v18 g-bg-secondary g-pa-30">
+                        <div class="g-mb-15">
+                            <h5 class="h5 g-color-gray-dark-v1 mb-0">John Doe</h5>
+                            <span class="g-color-gray-dark-v4 g-font-size-12">5 days ago</span>
                         </div>
-                    </article>
-                    <!-- Second Comment Reply -->
-                    <article class="row">
-                        <div class="col-md-2 col-sm-2 col-md-offset-1 col-sm-offset-0 hidden-xs">
-                            <figure class="thumbnail">
-                                <img class="img-responsive" src="http://www.tangoflooring.ca/wp-content/uploads/2015/07/user-avatar-placeholder.png" />
-                                <figcaption class="text-center">username</figcaption>
-                            </figure>
-                        </div>
-                        <div class="col-md-9 col-sm-9">
-                            <div class="panel panel-default arrow left">
-                                <div class="panel-heading right">Reply</div>
-                                <div class="panel-body">
-                                    <header class="text-left">
-                                        <div class="comment-user"><i class="fa fa-user"></i> That Guy</div>
-                                        <time class="comment-date" datetime="16-12-2014 01:05"><i class="fa fa-clock-o"></i> Dec 16, 2014</time>
-                                    </header>
-                                    <div class="comment-post">
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                        </p>
-                                    </div>
-                                    <p class="text-right"><a href="#" class="btn btn-default btn-sm"><i class="fa fa-reply"></i> reply</a></p>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                    <!-- Third Comment -->
-                    <article class="row">
-                        <div class="col-md-10 col-sm-10">
-                            <div class="panel panel-default arrow right">
-                                <div class="panel-body">
-                                    <header class="text-right">
-                                        <div class="comment-user"><i class="fa fa-user"></i> That Guy</div>
-                                        <time class="comment-date" datetime="16-12-2014 01:05"><i class="fa fa-clock-o"></i> Dec 16, 2014</time>
-                                    </header>
-                                    <div class="comment-post">
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                        </p>
-                                    </div>
-                                    <p class="text-right"><a href="#" class="btn btn-default btn-sm"><i class="fa fa-reply"></i> reply</a></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-2 col-sm-2 hidden-xs">
-                            <figure class="thumbnail">
-                                <img class="img-responsive" src="http://www.tangoflooring.ca/wp-content/uploads/2015/07/user-avatar-placeholder.png" />
-                                <figcaption class="text-center">username</figcaption>
-                            </figure>
-                        </div>
-                    </article>
-                    <!-- Fourth Comment -->
-                    <article class="row">
-                        <div class="col-md-2 col-sm-2 hidden-xs">
-                            <figure class="thumbnail">
-                                <img class="img-responsive" src="http://www.tangoflooring.ca/wp-content/uploads/2015/07/user-avatar-placeholder.png" />
-                                <figcaption class="text-center">username</figcaption>
-                            </figure>
-                        </div>
-                        <div class="col-md-10 col-sm-10 col-xs-12">
-                            <div class="panel panel-default arrow left">
-                                <div class="panel-body">
-                                    <header class="text-left">
-                                        <div class="comment-user"><i class="fa fa-user"></i> That Guy</div>
-                                        <time class="comment-date" datetime="16-12-2014 01:05"><i class="fa fa-clock-o"></i> Dec 16, 2014</time>
-                                    </header>
-                                    <div class="comment-post">
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                        </p>
-                                    </div>
-                                    <p class="text-right"><a href="#" class="btn btn-default btn-sm"><i class="fa fa-reply"></i> reply</a></p>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                    <!-- Fifth Comment -->
-                    <article class="row">
-                        <div class="col-md-10 col-sm-10">
-                            <div class="panel panel-default arrow right">
-                                <div class="panel-body">
-                                    <header class="text-right">
-                                        <div class="comment-user"><i class="fa fa-user"></i> That Guy</div>
-                                        <time class="comment-date" datetime="16-12-2014 01:05"><i class="fa fa-clock-o"></i> Dec 16, 2014</time>
-                                    </header>
-                                    <div class="comment-post">
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                        </p>
-                                    </div>
-                                    <p class="text-right"><a href="#" class="btn btn-default btn-sm"><i class="fa fa-reply"></i> reply</a></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-2 col-sm-2 hidden-xs">
-                            <figure class="thumbnail">
-                                <img class="img-responsive" src="http://www.tangoflooring.ca/wp-content/uploads/2015/07/user-avatar-placeholder.png" />
-                                <figcaption class="text-center">username</figcaption>
-                            </figure>
-                        </div>
-                    </article>
-                    <!-- Sixth Comment Reply -->
-                    <article class="row">
-                        <div class="col-md-9 col-sm-9 col-md-offset-1 col-md-pull-1 col-sm-offset-0">
-                            <div class="panel panel-default arrow right">
-                                <div class="panel-heading">Reply</div>
-                                <div class="panel-body">
-                                    <header class="text-right">
-                                        <div class="comment-user"><i class="fa fa-user"></i> That Guy</div>
-                                        <time class="comment-date" datetime="16-12-2014 01:05"><i class="fa fa-clock-o"></i> Dec 16, 2014</time>
-                                    </header>
-                                    <div class="comment-post">
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                        </p>
-                                    </div>
-                                    <p class="text-right"><a href="#" class="btn btn-default btn-sm"><i class="fa fa-reply"></i> reply</a></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-2 col-sm-2 col-md-pull-1 hidden-xs">
-                            <figure class="thumbnail">
-                                <img class="img-responsive" src="http://www.tangoflooring.ca/wp-content/uploads/2015/07/user-avatar-placeholder.png" />
-                                <figcaption class="text-center">username</figcaption>
-                            </figure>
-                        </div>
-                    </article>
-                </section>
+
+                        <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue
+                            felis in faucibus ras purus odio, vestibulum in vulputate at, tempus viverra turpis.</p>
+
+                        <ul class="list-inline d-sm-flex my-0">
+                            <li class="list-inline-item g-mr-20">
+                                <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="#!">
+                                    <i class="fa fa-thumbs-up g-pos-rel g-top-1 g-mr-3"></i>
+                                    178
+                                </a>
+                            </li>
+                            <li class="list-inline-item g-mr-20">
+                                <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="#!">
+                                    <i class="fa fa-thumbs-down g-pos-rel g-top-1 g-mr-3"></i>
+                                    34
+                                </a>
+                            </li>
+                            <li class="list-inline-item ml-auto">
+                                <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="#!">
+                                    <i class="fa fa-reply g-pos-rel g-top-1 g-mr-3"></i>
+                                    Reply
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </body>
+
+</html>
