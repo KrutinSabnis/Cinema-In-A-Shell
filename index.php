@@ -44,48 +44,95 @@
     </div>
   </div>
 
-  <?php
-  // $curl = curl_init();
-
-  // curl_setopt_array($curl, array(
-  //   CURLOPT_URL => "https://sg.media-imdb.com/suggests/b/back%20to.json",
-  //   CURLOPT_RETURNTRANSFER => true,
-  //   CURLOPT_TIMEOUT => 30,
-  //   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-  //   CURLOPT_CUSTOMREQUEST => "GET",
-  //   CURLOPT_HTTPHEADER => array(
-  //     "cache-control: no-cache"
-  //   ),
-  // ));
-
-  // $response = curl_exec($curl);
-  // $err = curl_error($curl);
-
-  // curl_close($curl);
-
-  // $response = json_decode($response, true);
-  // echo 'Online: ' . $response['players']['online'];
-  ?>
+ 
 
 
   <div class="container" style="max-width:1400px;margin-top:60px">
-    <div class="w3-row justify-content-center">
-      <div class="w3-col m4">
-        <div class="w3-card w3-round w3-white w3-margin">
-          <div class="w3-container">
-            <h4 class="w3-center">My Profile</h4>
-            <center><img src="https://cdn2.iconfinder.com/data/icons/flat-style-svg-icons-part-1/512/user_man_male_profile_account-512.png" class="w3-circle" style="height:106px;width:106px" alt="Avatar">
-              <h5>Huzaifa</h5>
-            </center>
-            <hr>
-            <p><i class="fas fa-coins fa-fw w3-margin-right w3-text-theme"></i> 500</p>
-            <p><i class="fa fa-venus-mars fa-fw w3-margin-right w3-text-theme"></i> Male</p>
-            <p><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-text-theme"></i> April 1, 1988</p>
+    <div class="row">
+      <div style="float: right;margin-right:20px">
+        <div class="input-group" style="display: flex;">
+          <input type="search" placeholder="Search" style="flex: 5;" id="form1" class="form-control" />
+          
+        
+          <button type="button" style="flex:1" class="btn btn-primary w3-theme-d2">
+            <i class="fas fa-search"></i>
+          </button>
           </div>
-        </div>
       </div>
+    </div>
+    <div class="row justify-content-center">
+    <?php
 
-      <div class="w3-col m8">
+
+class DotEnv
+{
+    /**
+     * The directory where the .env file can be located.
+     *
+     * @var string
+     */
+    protected $path;
+
+
+    public function __construct(string $path)
+    {
+        if(!file_exists($path)) {
+            throw new \InvalidArgumentException(sprintf('%s does not exist', $path));
+        }
+        $this->path = $path;
+    }
+
+    public function load() :void
+    {
+        if (!is_readable($this->path)) {
+            throw new \RuntimeException(sprintf('%s file is not readable', $this->path));
+        }
+
+        $lines = file($this->path, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+        foreach ($lines as $line) {
+
+            if (strpos(trim($line), '#') === 0) {
+                continue;
+            }
+
+            list($name, $value) = explode('=', $line, 2);
+            $name = trim($name);
+            $value = trim($value);
+
+            if (!array_key_exists($name, $_SERVER) && !array_key_exists($name, $_ENV)) {
+                putenv(sprintf('%s=%s', $name, $value));
+                $_ENV[$name] = $value;
+                $_SERVER[$name] = $value;
+            }
+        }
+    }
+}
+
+(new DotEnv(__DIR__ . '/.env'))->load();
+$key =  getenv('imdbapikey');
+
+// $curl = curl_init();
+
+// curl_setopt_array($curl, array(
+//   CURLOPT_URL => "https://sg.media-imdb.com/suggests/b/back%20to.json",
+//   CURLOPT_RETURNTRANSFER => true,
+//   CURLOPT_TIMEOUT => 30,
+//   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+//   CURLOPT_CUSTOMREQUEST => "GET",
+//   CURLOPT_HTTPHEADER => array(
+//     "cache-control: no-cache"
+//   ),
+// ));
+
+// $response = curl_exec($curl);
+// $err = curl_error($curl);
+
+// curl_close($curl);
+
+// $response = json_decode($response, true);
+// echo 'Online: ' . $response['players']['online'];
+?>
+      <div class="col-8">
         <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
           <img src="https://m.media-amazon.com/images/M/MV5BZmU0M2Y1OGUtZjIxNi00ZjBkLTg1MjgtOWIyNThiZWIwYjRiXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg" alt="poster" class="w3-left w3-margin-right" style="width:60px">
           <span class="w3-right w3-opacity">1 min</span>
