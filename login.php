@@ -11,6 +11,9 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <style>
+    html, body, .full {
+      height: 100%;
+    }
     body {
       margin-top: 20px;
       background: #f6f9fc;
@@ -57,14 +60,23 @@
       border-color: #5369f8;
       color: #fff;
     }
+    .newRow {
+  width: 100%;
+  display: table;
+}
+.newRow .col-xl-10 {
+  display: table-cell;
+  vertical-align: middle;
+  float: none
+}
   </style>
 </head>
 
 <body>
-  <div id="main-wrapper" class="container">
-    <div class="row justify-content-center align-items-center">
+  <div id="main-wrapper" class="container full">
+    <div class="row full justify-content-center align-items-center newRow">
       <div class="col-xl-10">
-        <div class="card border-0">
+        <div class="card border-1">
           <div class="card-body p-0">
             <div class="row no-gutters">
               <div class="col-lg-6">

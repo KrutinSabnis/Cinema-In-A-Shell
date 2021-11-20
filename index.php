@@ -33,18 +33,33 @@
     <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
       <span class="w3-bar-item w3-padding-large">
         <i class="fas fa-film"></i> Cinema in a shell</span>
-      <button class=" w3-button w3-padding-large w3-right" title="My Account" style="min-width:100px">
-        <span>Logout</span>
-      </button>
-      <button class=" w3-button w3-padding-large w3-right" title="My Account" style="min-width:100px">
-        <span>Sign up</span>
-      </button><button class=" w3-button w3-padding-large w3-right" title="My Account" style="min-width:100px">
-        <span>Login</span>
-      </button>
+      <div class = "w3-right" style="float: left;">
+        <?php
+        if (isset($_SESSION['user'])) {
+        // if (true) {
+          echo '<div class="w3-dropdown-hover w3-hide-small" style="background-color:rgba(0,0,0,0)">
+          <button class="w3-button w3-padding-large" style="min-width:150px;color:#fff" title="Notifications">
+            <img src="https://www.w3schools.com/w3images/avatar2.png" class="w3-circle" style="height:23px;width:23px" alt="Avatar">
+            Huzaifa</button>
+          <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+            <a href="#" class="w3-bar-item w3-button">profile</a>
+            <a href="#" class="w3-bar-item w3-button">logout</a>
+          </div>
+        </div>';
+        } else {
+          echo '</button><button class=" w3-button w3-padding-large w3-right" title="My Account" style="min-width:100px">
+          <span>Login</span>
+        </button>
+          <button class=" w3-button w3-padding-large w3-right" title="My Account" style="min-width:100px">
+          <span>Sign up</span>
+        ';
+        }
+        ?>
+      </div>
     </div>
   </div>
 
- 
+
 
 
   <div class="container" style="max-width:1400px;margin-top:60px">
@@ -52,47 +67,47 @@
       <div style="float: right;margin-right:20px">
         <div class="input-group" style="display: flex;">
           <input type="search" placeholder="Search" style="flex: 5;" id="form1" class="form-control" />
-          
-        
+
+
           <button type="button" style="flex:1" class="btn btn-primary w3-theme-d2">
             <i class="fas fa-search"></i>
           </button>
-          </div>
+        </div>
       </div>
     </div>
     <div class="row justify-content-center">
-    <?php
+      <?php
 
 
-class DotEnv
-{
-    /**
-     * The directory where the .env file can be located.
-     *
-     * @var string
-     */
-    protected $path;
+      class DotEnv
+      {
+        /**
+         * The directory where the .env file can be located.
+         *
+         * @var string
+         */
+        protected $path;
 
 
-    public function __construct(string $path)
-    {
-        if(!file_exists($path)) {
+        public function __construct(string $path)
+        {
+          if (!file_exists($path)) {
             throw new \InvalidArgumentException(sprintf('%s does not exist', $path));
+          }
+          $this->path = $path;
         }
-        $this->path = $path;
-    }
 
-    public function load() :void
-    {
-        if (!is_readable($this->path)) {
+        public function load(): void
+        {
+          if (!is_readable($this->path)) {
             throw new \RuntimeException(sprintf('%s file is not readable', $this->path));
-        }
+          }
 
-        $lines = file($this->path, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-        foreach ($lines as $line) {
+          $lines = file($this->path, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+          foreach ($lines as $line) {
 
             if (strpos(trim($line), '#') === 0) {
-                continue;
+              continue;
             }
 
             list($name, $value) = explode('=', $line, 2);
@@ -100,38 +115,38 @@ class DotEnv
             $value = trim($value);
 
             if (!array_key_exists($name, $_SERVER) && !array_key_exists($name, $_ENV)) {
-                putenv(sprintf('%s=%s', $name, $value));
-                $_ENV[$name] = $value;
-                $_SERVER[$name] = $value;
+              putenv(sprintf('%s=%s', $name, $value));
+              $_ENV[$name] = $value;
+              $_SERVER[$name] = $value;
             }
+          }
         }
-    }
-}
+      }
 
-(new DotEnv(__DIR__ . '/.env'))->load();
-$key =  getenv('imdbapikey');
+      (new DotEnv(__DIR__ . '/.env'))->load();
+      $key =  getenv('imdbapikey');
 
-// $curl = curl_init();
+      // $curl = curl_init();
 
-// curl_setopt_array($curl, array(
-//   CURLOPT_URL => "https://sg.media-imdb.com/suggests/b/back%20to.json",
-//   CURLOPT_RETURNTRANSFER => true,
-//   CURLOPT_TIMEOUT => 30,
-//   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-//   CURLOPT_CUSTOMREQUEST => "GET",
-//   CURLOPT_HTTPHEADER => array(
-//     "cache-control: no-cache"
-//   ),
-// ));
+      // curl_setopt_array($curl, array(
+      //   CURLOPT_URL => "https://sg.media-imdb.com/suggests/b/back%20to.json",
+      //   CURLOPT_RETURNTRANSFER => true,
+      //   CURLOPT_TIMEOUT => 30,
+      //   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+      //   CURLOPT_CUSTOMREQUEST => "GET",
+      //   CURLOPT_HTTPHEADER => array(
+      //     "cache-control: no-cache"
+      //   ),
+      // ));
 
-// $response = curl_exec($curl);
-// $err = curl_error($curl);
+      // $response = curl_exec($curl);
+      // $err = curl_error($curl);
 
-// curl_close($curl);
+      // curl_close($curl);
 
-// $response = json_decode($response, true);
-// echo 'Online: ' . $response['players']['online'];
-?>
+      // $response = json_decode($response, true);
+      // echo 'Online: ' . $response['players']['online'];
+      ?>
       <div class="col-8">
         <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
           <img src="https://m.media-amazon.com/images/M/MV5BZmU0M2Y1OGUtZjIxNi00ZjBkLTg1MjgtOWIyNThiZWIwYjRiXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg" alt="poster" class="w3-left w3-margin-right" style="width:60px">
@@ -141,7 +156,54 @@ $key =  getenv('imdbapikey');
           <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like</button>
           <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment</button>
         </div>
-
+        <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
+          <img src="https://m.media-amazon.com/images/M/MV5BZmU0M2Y1OGUtZjIxNi00ZjBkLTg1MjgtOWIyNThiZWIwYjRiXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg" alt="poster" class="w3-left w3-margin-right" style="width:60px">
+          <span class="w3-right w3-opacity">1 min</span>
+          <h4>Back to the future</h4>
+          <p>Marty McFly, a 17-year-old high school student, is accidentally sent thirty years into the past in a time-traveling DeLorean invented by his close friend, the eccentric scientist Doc Brown.</p>
+          <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like</button>
+          <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment</button>
+        </div>
+        <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
+          <img src="https://m.media-amazon.com/images/M/MV5BZmU0M2Y1OGUtZjIxNi00ZjBkLTg1MjgtOWIyNThiZWIwYjRiXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg" alt="poster" class="w3-left w3-margin-right" style="width:60px">
+          <span class="w3-right w3-opacity">1 min</span>
+          <h4>Back to the future</h4>
+          <p>Marty McFly, a 17-year-old high school student, is accidentally sent thirty years into the past in a time-traveling DeLorean invented by his close friend, the eccentric scientist Doc Brown.</p>
+          <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like</button>
+          <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment</button>
+        </div>
+        <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
+          <img src="https://m.media-amazon.com/images/M/MV5BZmU0M2Y1OGUtZjIxNi00ZjBkLTg1MjgtOWIyNThiZWIwYjRiXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg" alt="poster" class="w3-left w3-margin-right" style="width:60px">
+          <span class="w3-right w3-opacity">1 min</span>
+          <h4>Back to the future</h4>
+          <p>Marty McFly, a 17-year-old high school student, is accidentally sent thirty years into the past in a time-traveling DeLorean invented by his close friend, the eccentric scientist Doc Brown.</p>
+          <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like</button>
+          <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment</button>
+        </div>
+        <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
+          <img src="https://m.media-amazon.com/images/M/MV5BZmU0M2Y1OGUtZjIxNi00ZjBkLTg1MjgtOWIyNThiZWIwYjRiXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg" alt="poster" class="w3-left w3-margin-right" style="width:60px">
+          <span class="w3-right w3-opacity">1 min</span>
+          <h4>Back to the future</h4>
+          <p>Marty McFly, a 17-year-old high school student, is accidentally sent thirty years into the past in a time-traveling DeLorean invented by his close friend, the eccentric scientist Doc Brown.</p>
+          <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like</button>
+          <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment</button>
+        </div>
+        <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
+          <img src="https://m.media-amazon.com/images/M/MV5BZmU0M2Y1OGUtZjIxNi00ZjBkLTg1MjgtOWIyNThiZWIwYjRiXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg" alt="poster" class="w3-left w3-margin-right" style="width:60px">
+          <span class="w3-right w3-opacity">1 min</span>
+          <h4>Back to the future</h4>
+          <p>Marty McFly, a 17-year-old high school student, is accidentally sent thirty years into the past in a time-traveling DeLorean invented by his close friend, the eccentric scientist Doc Brown.</p>
+          <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like</button>
+          <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment</button>
+        </div>
+        <div class="w3-container w3-card w3-white w3-round w3-margin"><br>
+          <img src="https://m.media-amazon.com/images/M/MV5BZmU0M2Y1OGUtZjIxNi00ZjBkLTg1MjgtOWIyNThiZWIwYjRiXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg" alt="poster" class="w3-left w3-margin-right" style="width:60px">
+          <span class="w3-right w3-opacity">1 min</span>
+          <h4>Back to the future</h4>
+          <p>Marty McFly, a 17-year-old high school student, is accidentally sent thirty years into the past in a time-traveling DeLorean invented by his close friend, the eccentric scientist Doc Brown.</p>
+          <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like</button>
+          <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment</button>
+        </div>
       </div>
     </div>
 

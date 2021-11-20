@@ -10,55 +10,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    
-    <style>
-        body {
-            margin-top: 20px;
-            background: #f6f9fc;
-        }
 
-        .account-block {
-            padding: 0;
-            background-image: url(https://via.placeholder.com/500x500/FFB6C1/000000);
-            background-repeat: no-repeat;
-            background-size: cover;
-            height: 100%;
-            position: relative;
-        }
-
-        .account-block .overlay {
-            -webkit-box-flex: 1;
-            -ms-flex: 1;
-            flex: 1;
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background-color: rgba(0, 0, 0, 0.4);
-        }
-
-        .account-block .account-testimonial {
-            text-align: center;
-            color: #fff;
-            position: absolute;
-            margin: 0 auto;
-            padding: 0 1.75rem;
-            bottom: 3rem;
-            left: 0;
-            right: 0;
-        }
-
-        .text-theme {
-            color: #5369f8 !important;
-        }
-
-        .btn-theme {
-            background-color: #5369f8;
-            border-color: #5369f8;
-            color: #fff;
-        }
-    </style>
     <style>
         body {
             margin-top: 20px;
@@ -114,6 +66,20 @@
 </head>
 
 <body>
+    <div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 ">
+                    <div class="g-pa-30 g-bg-secondary media-body u-shadow-v18">
+                        <div class="g-mb-15">
+                            <h3 class="h3 g-color-gray-dark-v1 mb-0">John Doe</h3>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <div class="row">
             <div class="col-md-8">
@@ -139,12 +105,6 @@
                                 <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="#!">
                                     <i class="fa fa-thumbs-down g-pos-rel g-top-1 g-mr-3"></i>
                                     34
-                                </a>
-                            </li>
-                            <li class="list-inline-item ml-auto">
-                                <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="#!">
-                                    <i class="fa fa-reply g-pos-rel g-top-1 g-mr-3"></i>
-                                    Reply
                                 </a>
                             </li>
                         </ul>
@@ -175,12 +135,6 @@
                                 <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="#!">
                                     <i class="fa fa-thumbs-down g-pos-rel g-top-1 g-mr-3"></i>
                                     34
-                                </a>
-                            </li>
-                            <li class="list-inline-item ml-auto">
-                                <a class="u-link-v5 g-color-gray-dark-v4 g-color-primary--hover" href="#!">
-                                    <i class="fa fa-reply g-pos-rel g-top-1 g-mr-3"></i>
-                                    Reply
                                 </a>
                             </li>
                         </ul>
