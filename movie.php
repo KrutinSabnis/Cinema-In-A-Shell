@@ -2,10 +2,13 @@
 <html lang="en">
 
 <head>
-    <!-- <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
@@ -62,30 +65,62 @@
         .media-comment {
             margin-top: 20px
         }
+
+        .main-div-forbut {
+            position: relative;
+        }
+
+        .bottombut {
+            position: absolute;
+            bottom: 0;
+        }
+
+        .rounded-circle {
+            padding: 0px !important;
+            border-radius: 50% !important;
+        }
+
+        .mediaexcept {
+            margin-top: 0px !important;
+        }
+
+        .rowexception {
+            margin-left: 0px !important;
+            margin-right: 0px !important;
+        }
     </style>
 </head>
 
 <body>
-    <div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 ">
-                    <div class="g-pa-30 g-bg-secondary media-body u-shadow-v18">
-                        <div class="g-mb-15">
-                            <h3 class="h3 g-color-gray-dark-v1 mb-0">John Doe</h3>
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="w3-top">
+        <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
+            <button onclick="window.history.back()" class="w3-button">
+                <i class="fa-solid fa-arrow-left"></i>
+            </button>
+
         </div>
     </div>
-    <div class="container">
+    <div class="container" style="margin-top:42px;padding-top:16px;">
         <div class="row">
-            <div class="col-md-8">
-                <div class="media g-mb-30 media-comment">
-                    <img class="d-flex g-width-50 g-height-50 rounded-circle g-mt-3 g-mr-15" src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Image Description">
-                    <div class="media-body u-shadow-v18 g-bg-secondary g-pa-30">
+            <div class="col-md-12">
+                <div class="media-body u-shadow-v18 g-bg-secondary g-pa-30">
+                    <div class="g-mb-15 main-div-forbut" style="overflow: auto;">
+                        <img src="https://m.media-amazon.com/images/M/MV5BZmU0M2Y1OGUtZjIxNi00ZjBkLTg1MjgtOWIyNThiZWIwYjRiXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg" alt="poster" class="w3-left w3-margin-right" style="width:200px">
+                        <h3 style="margin-top: 0px;">Back to the future</h3>
+                        <p>Marty McFly, a 17-year-old high school student, is accidentally sent thirty years into the past in a time-traveling DeLorean invented by his close friend, the eccentric scientist Doc Brown.</p>
+                        <button type="button" style="margin-bottom: 0px !important;" class="w3-button bottombut w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like</button>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12" style="margin-top: 16px;">
+                <div class="row rowexception gutters-sm">
+                    <div class="col-md-1">
+                        <img class="d-flex g-width-50 g-height-50 rounded-circle g-mt-3 g-mr-15" src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Image Description">
+
+                    </div>
+                    <div class="col-md-11 media g-bg-secondary mediaexcept">
                         <div class="g-mb-15">
                             <h5 class="h5 g-color-gray-dark-v1 mb-0">John Doe</h5>
                             <span class="g-color-gray-dark-v4 g-font-size-12">5 days ago</span>
@@ -112,10 +147,13 @@
                 </div>
             </div>
 
-            <div class="col-md-8">
-                <div class="media g-mb-30 media-comment">
-                    <img class="d-flex g-width-50 g-height-50 rounded-circle g-mt-3 g-mr-15" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="Image Description">
-                    <div class="media-body u-shadow-v18 g-bg-secondary g-pa-30">
+            <div class="col-md-12" style="margin-top: 16px;">
+                <div class="row rowexception gutters-sm">
+                    <div class="col-md-1">
+                        <img class="d-flex g-width-50 g-height-50 rounded-circle g-mt-3 g-mr-15" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="Image Description">
+
+                    </div>
+                    <div class="col-md-11 media g-bg-secondary mediaexcept">
                         <div class="g-mb-15">
                             <h5 class="h5 g-color-gray-dark-v1 mb-0">John Doe</h5>
                             <span class="g-color-gray-dark-v4 g-font-size-12">5 days ago</span>
@@ -141,6 +179,8 @@
                     </div>
                 </div>
             </div>
+
+            
         </div>
     </div>
 </body>
