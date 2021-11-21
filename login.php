@@ -5,11 +5,16 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Login</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  
   <style>
     html, body, .full {
       height: 100%;
@@ -72,7 +77,7 @@
   </style>
 </head>
 
-<body>
+<body class="w3-theme-l5">
   <div id="main-wrapper" class="container full">
     <div class="row full justify-content-center align-items-center newRow">
       <div class="col-xl-10">
@@ -82,7 +87,7 @@
               <div class="col-lg-6">
                 <div class="p-5">
                   <div class="mb-5">
-                    <h3 class="h4 font-weight-bold text-theme">Login</h3>
+                    <h3 class="h4 font-weight-bold  ">Login</h3>
                   </div>
 
                   <h6 class="h5 mb-0">Welcome back!</h6>
@@ -97,8 +102,8 @@
                       <label for="exampleInputPassword1">Password</label>
                       <input type="password" class="form-control" id="exampleInputPassword1">
                     </div>
-                    <button type="submit" class="btn btn-theme">Login</button>
-                    <a href="#l" class="forgot-link float-right text-primary">Forgot password?</a>
+                    <button type="submit" class="w3-button w3-theme-d2">Login</button>
+                    <!-- <a href="#l" class="forgot-link float-right text-primary">Forgot password?</a> -->
                   </form>
                 </div>
               </div>
@@ -107,9 +112,7 @@
                 <div class="account-block rounded-right">
                   <div class="overlay rounded-right"></div>
                   <div class="account-testimonial">
-                    <h4 class="text-white mb-4">This beautiful theme yours!</h4>
-                    <p class="lead text-white">"Best investment i made for a long time. Can only recommend it for other users."</p>
-                    <p>- Admin User</p>
+                    <h1 class="text-white mb-4">Cinema in a Nutshell</h1>
                   </div>
                 </div>
               </div>
@@ -120,7 +123,7 @@
         </div>
         <!-- end card -->
 
-        <p class="text-muted text-center mt-3 mb-0">Don't have an account? <a href="register.html" class="text-primary ml-1">register</a></p>
+        <p class="text-muted text-center mt-3 mb-0">Don't have an account? <a href="signup.php" class="text-primary ml-1">sign up</a></p>
 
         <!-- end row -->
 
