@@ -99,15 +99,15 @@
                                     <form>
                                         <div class="form-group">
                                             <label for="username">Username</label>
-                                            <input type="text" class="form-control" id="username" />
+                                            <input type="text" class="form-control" id="username" required/>
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputEmail1">Email address</label>
-                                            <input type="email" class="form-control" id="exampleInputEmail1" />
+                                            <input type="email" class="form-control" id="exampleInputEmail1" required/>
                                         </div>
                                         <div class="form-floating mb-3">
                                             <label for="birthday">Date of Birth:</label>
-                                            <input type="date" class="form-control" id="birthday" placeholder="Date of Birth">
+                                            <input type="date" class="form-control" id="birthday" placeholder="Date of Birth" required>
                                         </div>
 
                                         <fieldset class="border p-2">
@@ -124,11 +124,11 @@
 
                                         <div class="form-group">
                                             <label for="exampleInputPassword1">Password</label>
-                                            <input type="password" class="form-control" id="exampleInputPassword1" />
+                                            <input type="password" class="form-control" id="exampleInputPassword1" required/>
                                         </div>
                                         <div class="form-group mb-3">
                                             <label for="floatingConfPassword">Confirm Password</label>
-                                            <input type="password" class="form-control" id="floatingConfPassword">
+                                            <input type="password" class="form-control" id="floatingConfPassword" required>
 
                                         </div>
                                         <button type="submit" class="w3-button w3-theme-d2">Sign up</button>
