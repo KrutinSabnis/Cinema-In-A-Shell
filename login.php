@@ -93,7 +93,7 @@
                   <h6 class="h5 mb-0">Welcome back!</h6>
                   <p class="text-muted mt-2 mb-5">Enter your email address and password to access admin panel.</p>
 
-                  <form>
+                  <form action=<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?> method="POST">
                     <div class="form-group">
                       <label for="exampleInputEmail1">Email address</label>
                       <input type="email" class="form-control" id="exampleInputEmail1" required>
