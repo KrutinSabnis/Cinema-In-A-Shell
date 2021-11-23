@@ -96,7 +96,7 @@
                                     <div>
                                         <h3 class="h4 font-weight-bold  ">Register</h3>
                                     </div>
-                                    <form>
+                                    <form action=<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?> method="POST">
                                         <div class="form-group">
                                             <label for="username">Username</label>
                                             <input type="text" class="form-control" id="username" required/>
